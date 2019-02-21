@@ -1,6 +1,4 @@
 import java.util.Arrays;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
@@ -40,10 +38,10 @@ import java.util.TreeSet;
  Output: 0
  Explanation: In this case, no transaction is done, i.e. max profit = 0.
  */
-public class Array3 {
+public class BestTimetoBuyandSellStock3 {
     public static void main(String[] args) {
         int[] arr = {1,2,4,2,5,7,2,4,9,0};
-        System.out.println(new Array3().maxProfit(arr));
+        System.out.println(new BestTimetoBuyandSellStock3().maxProfit(arr));
     }
 
     public int maxProfit2(int[] prices) {

@@ -45,14 +45,14 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class BinaryTree1 {
+public class BinaryTreeMaximumPathSum {
 
 
     TreeNode root;
 
 
     public static void main(String[] args) {
-        BinaryTree1 t2 = new BinaryTree1();
+        BinaryTreeMaximumPathSum t2 = new BinaryTreeMaximumPathSum();
         Integer[] arr = {-10, 9, 20, null, null, 15, 7};
         t2.root = t2.insertLevelOrder(arr, t2.root, 0);
 //        t2.inOrder(t2.root);

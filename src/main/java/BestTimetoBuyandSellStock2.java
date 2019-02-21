@@ -27,10 +27,10 @@
  * Output: 0
  * Explanation: In this case, no transaction is done, i.e. max profit = 0.
  */
-public class Array2 {
+public class BestTimetoBuyandSellStock2 {
     public static void main(String[] args) {
         int[] arr = {7,1,5,3,6,4};
-        System.out.println(new Array2().maxProfit(arr));
+        System.out.println(new BestTimetoBuyandSellStock2().maxProfit(arr));
     }
 
     public int maxProfit(int[] prices) {
