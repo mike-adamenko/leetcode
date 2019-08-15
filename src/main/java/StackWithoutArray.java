@@ -1,25 +1,24 @@
+import java.util.EmptyStackException;
+
 /**
  * Simple stack implementation
  *
  * @author Mike Adamenko (mnadamenko@gmail.com)
  */
 public class StackWithoutArray<T> {
-    private Node top = null;
+    private Node<T> top;
     private int lenght = 0;
 
     public void push(T value) {
-        Node node = new Node(value);
-        if (top == null) top = node;
-        else {
-            node.next = top;
-            top = node;
-        }
+        Node<T> node = new Node(value);
+        node.next = top;
+        top = node;
         lenght++;
     }
 
     public T pop() {
-        if (top == null) return null;
-        T result = (T)top.value;
+        if (top == null) throw new EmptyStackException();
+        T result = top.value;
         top = top.next;
         lenght--;
         return result;
@@ -28,6 +27,10 @@ public class StackWithoutArray<T> {
     @Override
     public String toString() {
         return top.toString();
+    }
+
+    public int size(){
+        return lenght;
     }
 
     public static void main(String[] args) {
@@ -39,6 +42,7 @@ public class StackWithoutArray<T> {
         intStack.push(5);
         intStack.push(6);
         System.out.println(intStack);
+        System.out.println("size = "+intStack.size());
 
         System.out.println(intStack.pop());
         System.out.println(intStack.pop());
@@ -52,7 +56,7 @@ public class StackWithoutArray<T> {
 }
 
 class Node<T> {
-    Node next;
+    Node<T> next;
     T value;
 
     public Node(T value) {
